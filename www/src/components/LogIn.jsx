@@ -1,7 +1,11 @@
-import { Box, TextField, Button } from '@mui/material/';
+import { Box, TextField, Button, imageListClasses } from '@mui/material/';
 import { useState } from 'react';
+import Snimatelji from "./Snimatelji"; 
+
 
 function LogIn() {
+
+    const [submit, setSubmit] = useState(false);
 
     const [loginUser, setLoginUser] = useState({
         user_name: "",
@@ -21,6 +25,10 @@ function LogIn() {
     const handleSubmit = (e) =>{
         e.preventDefault();
         console.log('uspešno logovanje');
+        setSubmit(!submit);
+
+        
+
     }
 
     return (
@@ -61,7 +69,8 @@ function LogIn() {
                 required
             />
             <br />
-            <Button variant="contained" type="submit">Ulogujte se</Button>
+            <Button variant="contained" type="submit" >Ulogujte se</Button>
+            {submit ? <Snimatelji/> : null}
         </Box>
     )
 }
