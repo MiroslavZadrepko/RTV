@@ -1,11 +1,11 @@
-import { Box, TextField, Button, imageListClasses } from '@mui/material/';
+import { Box, TextField, Button } from '@mui/material/';
 import { useState } from 'react';
-import Snimatelji from "./Snimatelji"; 
+import { Navigate } from "react-router-dom";
 
 
 function LogIn() {
 
-    const [submit, setSubmit] = useState(false);
+    const [submit, setSubmit] = useState();
 
     const [loginUser, setLoginUser] = useState({
         user_name: "",
@@ -22,13 +22,14 @@ function LogIn() {
         }));
     };
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e) => {
         e.preventDefault();
         console.log('uspešno logovanje');
-        setSubmit(!submit);
-
-        
-
+        if (user_name == "novinar") {
+            setSubmit("novinar");
+        } else if (user_name == "producent") {
+            setSubmit("producent");
+        }
     }
 
     return (
@@ -70,8 +71,11 @@ function LogIn() {
             />
             <br />
             <Button variant="contained" type="submit" >Ulogujte se</Button>
-            {submit ? <Snimatelji/> : null}
+            {(submit == 'novinar') ? <Navigate to="/novinar" /> : (submit == 'producent') ? <Navigate to="/snimatelji" /> : null}
+
+
         </Box>
+
     )
 }
 

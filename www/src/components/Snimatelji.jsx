@@ -6,8 +6,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
+function createData(Snimatelj, Kamera, Lokacija, Vreme, Novinar, Odobreno) {
+    return { Snimatelj, Kamera, Lokacija, Vreme, Novinar, Odobreno };
 };
 
 const rows = [
@@ -34,16 +34,17 @@ function Snimatelji() {
           <TableBody>
             {rows.map((row) => (
               <TableRow
-                key={row.name}
+                key={row.Snimatelj}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.name}
+                  {row.Snimatelj}
                 </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
+                <TableCell align="right">{row.Kamera}</TableCell>
+                <TableCell align="right">{row.Lokacija}</TableCell>
+                <TableCell align="right">{row.Vreme}</TableCell>
+                <TableCell align="right">{row.Novinar}</TableCell>
+                <TableCell align="right">{row.Odobreno}</TableCell>
               </TableRow>
             ))}
           </TableBody>

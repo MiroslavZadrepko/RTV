@@ -13,6 +13,8 @@ import AdminHandleRev from "./components/AdminHandleRev";*/
 import { ThemeProvider } from '@mui/material';
 import theme from "./components/styles/theme";
 import LogIn from './components/LogIn';
+import Novinar from './components/Novinar';
+import Snimatelji from './components/Snimatelji';
 
 function App() {
 
@@ -26,13 +28,15 @@ function App() {
 
           <Routes>
             <Route exact path="*" element={<LogIn />} />
+            <Route path="/novinar" element={<Novinar />} />
+            <Route path="/snimatelji" element={<Snimatelji />} />
+
             {/*<Route exact path="/logout" element={<LogOut />} />
-            
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/addcraftsman" element={<AddCraftsman />} />
             <Route exact path="/admin" element={<Admin />} />
             <Route path="/admin/crafts" element={<AdminHandleCraft />} />
-  <Route path="/admin/revs" element={<AdminHandleRev />} />*/}
+            <Route path="/admin/revs" element={<AdminHandleRev />} />*/}
           </Routes>
 
         </Router>
