@@ -14,6 +14,7 @@ import { createTheme } from "@mui/material";
         styleOverrides: {
           root: {
             marginTop:10,
+            width:500,
             backgroundColor: '#ffffff ',
             opacity: '.8',
           },
